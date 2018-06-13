@@ -33,7 +33,9 @@ Partial Class Form2
         Me.label1 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
+        Me.AxAcroPDF2 = New AxAcroPDFLib.AxAcroPDF()
         CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AxAcroPDF2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'label2
@@ -117,11 +119,21 @@ Partial Class Form2
         Me.AxAcroPDF1.Size = New System.Drawing.Size(192, 192)
         Me.AxAcroPDF1.TabIndex = 26
         '
+        'AxAcroPDF2
+        '
+        Me.AxAcroPDF2.Enabled = True
+        Me.AxAcroPDF2.Location = New System.Drawing.Point(12, 12)
+        Me.AxAcroPDF2.Name = "AxAcroPDF2"
+        Me.AxAcroPDF2.OcxState = CType(resources.GetObject("AxAcroPDF2.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxAcroPDF2.Size = New System.Drawing.Size(376, 470)
+        Me.AxAcroPDF2.TabIndex = 27
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 635)
+        Me.Controls.Add(Me.AxAcroPDF2)
         Me.Controls.Add(Me.AxAcroPDF1)
         Me.Controls.Add(Me.label2)
         Me.Controls.Add(Me.button3)
@@ -134,6 +146,7 @@ Partial Class Form2
         Me.Name = "Form2"
         Me.Text = "Form2"
         CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AxAcroPDF2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -149,4 +162,5 @@ Partial Class Form2
     Private WithEvents label1 As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents AxAcroPDF1 As AxAcroPDFLib.AxAcroPDF
+    Friend WithEvents AxAcroPDF2 As AxAcroPDFLib.AxAcroPDF
 End Class
