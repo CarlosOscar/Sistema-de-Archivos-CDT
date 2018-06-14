@@ -25,7 +25,8 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.button2 = New System.Windows.Forms.Button()
         Me.label9 = New System.Windows.Forms.Label()
         Me.checkedListBox2 = New System.Windows.Forms.CheckedListBox()
@@ -49,6 +50,7 @@ Partial Class Form1
         Me.label4 = New System.Windows.Forms.Label()
         Me.label3 = New System.Windows.Forms.Label()
         Me.label2 = New System.Windows.Forms.Label()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.dataGridView1 = New System.Windows.Forms.DataGridView()
         Me.button3 = New System.Windows.Forms.Button()
         Me.label15 = New System.Windows.Forms.Label()
@@ -56,14 +58,12 @@ Partial Class Form1
         Me.label13 = New System.Windows.Forms.Label()
         Me.textBox8 = New System.Windows.Forms.TextBox()
         Me.label14 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -111,22 +111,23 @@ Partial Class Form1
         Me.TabPage1.Text = "Agregar"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'TabPage2
+        'AxAcroPDF1
         '
-        Me.TabPage2.Controls.Add(Me.dataGridView1)
-        Me.TabPage2.Controls.Add(Me.button3)
-        Me.TabPage2.Controls.Add(Me.label15)
-        Me.TabPage2.Controls.Add(Me.textBox7)
-        Me.TabPage2.Controls.Add(Me.label13)
-        Me.TabPage2.Controls.Add(Me.textBox8)
-        Me.TabPage2.Controls.Add(Me.label14)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(805, 735)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Consultar"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.AxAcroPDF1.Enabled = True
+        Me.AxAcroPDF1.Location = New System.Drawing.Point(591, 168)
+        Me.AxAcroPDF1.Name = "AxAcroPDF1"
+        Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxAcroPDF1.Size = New System.Drawing.Size(192, 435)
+        Me.AxAcroPDF1.TabIndex = 57
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(612, 89)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(134, 13)
+        Me.Label11.TabIndex = 56
+        Me.Label11.Text = "Seleccione un archivo .pdf"
         '
         'button2
         '
@@ -329,6 +330,23 @@ Partial Class Form1
         Me.label2.TabIndex = 33
         Me.label2.Text = "Folio CDT"
         '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.dataGridView1)
+        Me.TabPage2.Controls.Add(Me.button3)
+        Me.TabPage2.Controls.Add(Me.label15)
+        Me.TabPage2.Controls.Add(Me.textBox7)
+        Me.TabPage2.Controls.Add(Me.label13)
+        Me.TabPage2.Controls.Add(Me.textBox8)
+        Me.TabPage2.Controls.Add(Me.label14)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(805, 735)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Consultar"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
         'dataGridView1
         '
         Me.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -387,24 +405,6 @@ Partial Class Form1
         Me.label14.TabIndex = 32
         Me.label14.Text = "Folio CDT"
         '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(612, 89)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(134, 13)
-        Me.Label11.TabIndex = 56
-        Me.Label11.Text = "Seleccione un archivo .pdf"
-        '
-        'AxAcroPDF1
-        '
-        Me.AxAcroPDF1.Enabled = True
-        Me.AxAcroPDF1.Location = New System.Drawing.Point(591, 168)
-        Me.AxAcroPDF1.Name = "AxAcroPDF1"
-        Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxAcroPDF1.Size = New System.Drawing.Size(192, 435)
-        Me.AxAcroPDF1.TabIndex = 57
-        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
@@ -420,10 +420,10 @@ Partial Class Form1
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
