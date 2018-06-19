@@ -22,6 +22,7 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -29,41 +30,47 @@ Partial Class Form1
         Me.Label11 = New System.Windows.Forms.Label()
         Me.button2 = New System.Windows.Forms.Button()
         Me.label9 = New System.Windows.Forms.Label()
-        Me.checkedListBox2 = New System.Windows.Forms.CheckedListBox()
-        Me.textBox6 = New System.Windows.Forms.TextBox()
+        Me.accion_box = New System.Windows.Forms.CheckedListBox()
+        Me.observaciones_txt = New System.Windows.Forms.TextBox()
         Me.label12 = New System.Windows.Forms.Label()
         Me.btnPDF = New System.Windows.Forms.Button()
-        Me.textBox5 = New System.Windows.Forms.TextBox()
+        Me.asunto_txt = New System.Windows.Forms.TextBox()
         Me.label10 = New System.Windows.Forms.Label()
-        Me.textBox4 = New System.Windows.Forms.TextBox()
+        Me.procedencia_txt = New System.Windows.Forms.TextBox()
         Me.label8 = New System.Windows.Forms.Label()
-        Me.dateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.requeridopara_txt = New System.Windows.Forms.DateTimePicker()
         Me.label7 = New System.Windows.Forms.Label()
         Me.label1 = New System.Windows.Forms.Label()
         Me.label6 = New System.Windows.Forms.Label()
-        Me.checkedListBox1 = New System.Windows.Forms.CheckedListBox()
-        Me.dateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.textBox3 = New System.Windows.Forms.TextBox()
-        Me.textBox2 = New System.Windows.Forms.TextBox()
-        Me.textBox1 = New System.Windows.Forms.TextBox()
+        Me.dirigido_box = New System.Windows.Forms.CheckedListBox()
+        Me.fecharecibido_date = New System.Windows.Forms.DateTimePicker()
+        Me.itginp_txt = New System.Windows.Forms.TextBox()
+        Me.folioginp_txt = New System.Windows.Forms.TextBox()
+        Me.foliocdt_txt = New System.Windows.Forms.TextBox()
         Me.label5 = New System.Windows.Forms.Label()
         Me.label4 = New System.Windows.Forms.Label()
         Me.label3 = New System.Windows.Forms.Label()
         Me.label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.dataGridView1 = New System.Windows.Forms.DataGridView()
         Me.button3 = New System.Windows.Forms.Button()
         Me.label15 = New System.Windows.Forms.Label()
-        Me.textBox7 = New System.Windows.Forms.TextBox()
+        Me.asunto2_txt = New System.Windows.Forms.TextBox()
         Me.label13 = New System.Windows.Forms.Label()
-        Me.textBox8 = New System.Windows.Forms.TextBox()
+        Me.foliocdt2_txt = New System.Windows.Forms.TextBox()
         Me.label14 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.CDTDataSet = New Sistema_de_Archivos.CDTDataSet()
+        Me.CDTDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.CDTDataSetBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
-        CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CDTDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CDTDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CDTDataSetBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -82,23 +89,23 @@ Partial Class Form1
         Me.TabPage1.Controls.Add(Me.Label11)
         Me.TabPage1.Controls.Add(Me.button2)
         Me.TabPage1.Controls.Add(Me.label9)
-        Me.TabPage1.Controls.Add(Me.checkedListBox2)
-        Me.TabPage1.Controls.Add(Me.textBox6)
+        Me.TabPage1.Controls.Add(Me.accion_box)
+        Me.TabPage1.Controls.Add(Me.observaciones_txt)
         Me.TabPage1.Controls.Add(Me.label12)
         Me.TabPage1.Controls.Add(Me.btnPDF)
-        Me.TabPage1.Controls.Add(Me.textBox5)
+        Me.TabPage1.Controls.Add(Me.asunto_txt)
         Me.TabPage1.Controls.Add(Me.label10)
-        Me.TabPage1.Controls.Add(Me.textBox4)
+        Me.TabPage1.Controls.Add(Me.procedencia_txt)
         Me.TabPage1.Controls.Add(Me.label8)
-        Me.TabPage1.Controls.Add(Me.dateTimePicker2)
+        Me.TabPage1.Controls.Add(Me.requeridopara_txt)
         Me.TabPage1.Controls.Add(Me.label7)
         Me.TabPage1.Controls.Add(Me.label1)
         Me.TabPage1.Controls.Add(Me.label6)
-        Me.TabPage1.Controls.Add(Me.checkedListBox1)
-        Me.TabPage1.Controls.Add(Me.dateTimePicker1)
-        Me.TabPage1.Controls.Add(Me.textBox3)
-        Me.TabPage1.Controls.Add(Me.textBox2)
-        Me.TabPage1.Controls.Add(Me.textBox1)
+        Me.TabPage1.Controls.Add(Me.dirigido_box)
+        Me.TabPage1.Controls.Add(Me.fecharecibido_date)
+        Me.TabPage1.Controls.Add(Me.itginp_txt)
+        Me.TabPage1.Controls.Add(Me.folioginp_txt)
+        Me.TabPage1.Controls.Add(Me.foliocdt_txt)
         Me.TabPage1.Controls.Add(Me.label5)
         Me.TabPage1.Controls.Add(Me.label4)
         Me.TabPage1.Controls.Add(Me.label3)
@@ -147,23 +154,23 @@ Partial Class Form1
         Me.label9.TabIndex = 54
         Me.label9.Text = "Acción:"
         '
-        'checkedListBox2
+        'accion_box
         '
-        Me.checkedListBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.checkedListBox2.FormattingEnabled = True
-        Me.checkedListBox2.Items.AddRange(New Object() {"PREPARAR RESPUESTA", "PARA SU ANÁLISIS", "PARA SU CONOCIMIENTO", "TRAMITE CONDUCENTE", "TRATAR PRÓXIMO ACUERDO", "ARCHIVAR"})
-        Me.checkedListBox2.Location = New System.Drawing.Point(10, 477)
-        Me.checkedListBox2.Name = "checkedListBox2"
-        Me.checkedListBox2.Size = New System.Drawing.Size(203, 90)
-        Me.checkedListBox2.TabIndex = 53
+        Me.accion_box.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.accion_box.FormattingEnabled = True
+        Me.accion_box.Items.AddRange(New Object() {"PREPARAR RESPUESTA", "PARA SU ANÁLISIS", "PARA SU CONOCIMIENTO", "TRAMITE CONDUCENTE", "TRATAR PRÓXIMO ACUERDO", "ARCHIVAR"})
+        Me.accion_box.Location = New System.Drawing.Point(10, 477)
+        Me.accion_box.Name = "accion_box"
+        Me.accion_box.Size = New System.Drawing.Size(203, 90)
+        Me.accion_box.TabIndex = 53
         '
-        'textBox6
+        'observaciones_txt
         '
-        Me.textBox6.Location = New System.Drawing.Point(304, 288)
-        Me.textBox6.Multiline = True
-        Me.textBox6.Name = "textBox6"
-        Me.textBox6.Size = New System.Drawing.Size(257, 131)
-        Me.textBox6.TabIndex = 52
+        Me.observaciones_txt.Location = New System.Drawing.Point(304, 288)
+        Me.observaciones_txt.Multiline = True
+        Me.observaciones_txt.Name = "observaciones_txt"
+        Me.observaciones_txt.Size = New System.Drawing.Size(257, 131)
+        Me.observaciones_txt.TabIndex = 52
         '
         'label12
         '
@@ -183,13 +190,13 @@ Partial Class Form1
         Me.btnPDF.Text = "Abrir"
         Me.btnPDF.UseVisualStyleBackColor = True
         '
-        'textBox5
+        'asunto_txt
         '
-        Me.textBox5.Location = New System.Drawing.Point(330, 215)
-        Me.textBox5.Multiline = True
-        Me.textBox5.Name = "textBox5"
-        Me.textBox5.Size = New System.Drawing.Size(185, 42)
-        Me.textBox5.TabIndex = 49
+        Me.asunto_txt.Location = New System.Drawing.Point(330, 215)
+        Me.asunto_txt.Multiline = True
+        Me.asunto_txt.Name = "asunto_txt"
+        Me.asunto_txt.Size = New System.Drawing.Size(185, 42)
+        Me.asunto_txt.TabIndex = 49
         '
         'label10
         '
@@ -200,12 +207,12 @@ Partial Class Form1
         Me.label10.TabIndex = 48
         Me.label10.Text = "ASUNTO:"
         '
-        'textBox4
+        'procedencia_txt
         '
-        Me.textBox4.Location = New System.Drawing.Point(359, 141)
-        Me.textBox4.Name = "textBox4"
-        Me.textBox4.Size = New System.Drawing.Size(100, 20)
-        Me.textBox4.TabIndex = 47
+        Me.procedencia_txt.Location = New System.Drawing.Point(359, 141)
+        Me.procedencia_txt.Name = "procedencia_txt"
+        Me.procedencia_txt.Size = New System.Drawing.Size(100, 20)
+        Me.procedencia_txt.TabIndex = 47
         '
         'label8
         '
@@ -216,14 +223,14 @@ Partial Class Form1
         Me.label8.TabIndex = 46
         Me.label8.Text = "Procedencia:"
         '
-        'dateTimePicker2
+        'requeridopara_txt
         '
-        Me.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dateTimePicker2.Location = New System.Drawing.Point(359, 117)
-        Me.dateTimePicker2.Name = "dateTimePicker2"
-        Me.dateTimePicker2.Size = New System.Drawing.Size(100, 20)
-        Me.dateTimePicker2.TabIndex = 45
-        Me.dateTimePicker2.Value = New Date(2018, 5, 30, 0, 0, 0, 0)
+        Me.requeridopara_txt.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.requeridopara_txt.Location = New System.Drawing.Point(359, 117)
+        Me.requeridopara_txt.Name = "requeridopara_txt"
+        Me.requeridopara_txt.Size = New System.Drawing.Size(100, 20)
+        Me.requeridopara_txt.TabIndex = 45
+        Me.requeridopara_txt.Value = New Date(2018, 5, 30, 0, 0, 0, 0)
         '
         'label7
         '
@@ -253,46 +260,46 @@ Partial Class Form1
         Me.label6.TabIndex = 42
         Me.label6.Text = "Dirigido a:"
         '
-        'checkedListBox1
+        'dirigido_box
         '
-        Me.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.checkedListBox1.CheckOnClick = True
-        Me.checkedListBox1.FormattingEnabled = True
-        Me.checkedListBox1.Items.AddRange(New Object() {"ING. AGUSTIN G. PATIÑO ACENCIO", "ING. JOSÉ ANTONIO BARAJAS CORONADO", "ING. ARMANDO AYALA ABREU", "ING. JORGE GARCÍA LÓPEZ", "FIS. RUBÉN LLARENA FERNÁNDEZ DE LARA", "ING. RAÚL CONTRERAS BUENDÍA", "LIC. JESSICA MICHAELLE HERNÁNDEZ FERNÁNDEZ", "C. CLAUDIA CARAPIA GUEVARA", "LIC. ARTURO SILES BUENDÍA", "LIC. ABRAHAM I. GUZMÁN BUSTAMANTE"})
-        Me.checkedListBox1.Location = New System.Drawing.Point(10, 269)
-        Me.checkedListBox1.Name = "checkedListBox1"
-        Me.checkedListBox1.Size = New System.Drawing.Size(315, 150)
-        Me.checkedListBox1.TabIndex = 41
+        Me.dirigido_box.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dirigido_box.CheckOnClick = True
+        Me.dirigido_box.FormattingEnabled = True
+        Me.dirigido_box.Items.AddRange(New Object() {"ING. AGUSTIN G. PATIÑO ACENCIO", "ING. JOSÉ ANTONIO BARAJAS CORONADO", "ING. ARMANDO AYALA ABREU", "ING. JORGE GARCÍA LÓPEZ", "FIS. RUBÉN LLARENA FERNÁNDEZ DE LARA", "ING. RAÚL CONTRERAS BUENDÍA", "LIC. JESSICA MICHAELLE HERNÁNDEZ FERNÁNDEZ", "C. CLAUDIA CARAPIA GUEVARA", "LIC. ARTURO SILES BUENDÍA", "LIC. ABRAHAM I. GUZMÁN BUSTAMANTE"})
+        Me.dirigido_box.Location = New System.Drawing.Point(10, 269)
+        Me.dirigido_box.Name = "dirigido_box"
+        Me.dirigido_box.Size = New System.Drawing.Size(315, 150)
+        Me.dirigido_box.TabIndex = 41
         '
-        'dateTimePicker1
+        'fecharecibido_date
         '
-        Me.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dateTimePicker1.Location = New System.Drawing.Point(140, 143)
-        Me.dateTimePicker1.Name = "dateTimePicker1"
-        Me.dateTimePicker1.Size = New System.Drawing.Size(100, 20)
-        Me.dateTimePicker1.TabIndex = 40
-        Me.dateTimePicker1.Value = New Date(2018, 5, 30, 0, 0, 0, 0)
+        Me.fecharecibido_date.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.fecharecibido_date.Location = New System.Drawing.Point(140, 143)
+        Me.fecharecibido_date.Name = "fecharecibido_date"
+        Me.fecharecibido_date.Size = New System.Drawing.Size(100, 20)
+        Me.fecharecibido_date.TabIndex = 40
+        Me.fecharecibido_date.Value = New Date(2018, 6, 19, 0, 0, 0, 0)
         '
-        'textBox3
+        'itginp_txt
         '
-        Me.textBox3.Location = New System.Drawing.Point(140, 194)
-        Me.textBox3.Name = "textBox3"
-        Me.textBox3.Size = New System.Drawing.Size(100, 20)
-        Me.textBox3.TabIndex = 39
+        Me.itginp_txt.Location = New System.Drawing.Point(140, 194)
+        Me.itginp_txt.Name = "itginp_txt"
+        Me.itginp_txt.Size = New System.Drawing.Size(100, 20)
+        Me.itginp_txt.TabIndex = 39
         '
-        'textBox2
+        'folioginp_txt
         '
-        Me.textBox2.Location = New System.Drawing.Point(140, 168)
-        Me.textBox2.Name = "textBox2"
-        Me.textBox2.Size = New System.Drawing.Size(100, 20)
-        Me.textBox2.TabIndex = 38
+        Me.folioginp_txt.Location = New System.Drawing.Point(140, 168)
+        Me.folioginp_txt.Name = "folioginp_txt"
+        Me.folioginp_txt.Size = New System.Drawing.Size(100, 20)
+        Me.folioginp_txt.TabIndex = 38
         '
-        'textBox1
+        'foliocdt_txt
         '
-        Me.textBox1.Location = New System.Drawing.Point(140, 120)
-        Me.textBox1.Name = "textBox1"
-        Me.textBox1.Size = New System.Drawing.Size(100, 20)
-        Me.textBox1.TabIndex = 37
+        Me.foliocdt_txt.Location = New System.Drawing.Point(140, 120)
+        Me.foliocdt_txt.Name = "foliocdt_txt"
+        Me.foliocdt_txt.Size = New System.Drawing.Size(100, 20)
+        Me.foliocdt_txt.TabIndex = 37
         '
         'label5
         '
@@ -332,12 +339,12 @@ Partial Class Form1
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.dataGridView1)
+        Me.TabPage2.Controls.Add(Me.DataGridView1)
         Me.TabPage2.Controls.Add(Me.button3)
         Me.TabPage2.Controls.Add(Me.label15)
-        Me.TabPage2.Controls.Add(Me.textBox7)
+        Me.TabPage2.Controls.Add(Me.asunto2_txt)
         Me.TabPage2.Controls.Add(Me.label13)
-        Me.TabPage2.Controls.Add(Me.textBox8)
+        Me.TabPage2.Controls.Add(Me.foliocdt2_txt)
         Me.TabPage2.Controls.Add(Me.label14)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
@@ -346,14 +353,6 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Consultar"
         Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'dataGridView1
-        '
-        Me.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataGridView1.Location = New System.Drawing.Point(35, 189)
-        Me.dataGridView1.Name = "dataGridView1"
-        Me.dataGridView1.Size = New System.Drawing.Size(733, 300)
-        Me.dataGridView1.TabIndex = 38
         '
         'button3
         '
@@ -373,12 +372,12 @@ Partial Class Form1
         Me.label15.TabIndex = 36
         Me.label15.Text = "Consulta "
         '
-        'textBox7
+        'asunto2_txt
         '
-        Me.textBox7.Location = New System.Drawing.Point(118, 143)
-        Me.textBox7.Name = "textBox7"
-        Me.textBox7.Size = New System.Drawing.Size(161, 20)
-        Me.textBox7.TabIndex = 35
+        Me.asunto2_txt.Location = New System.Drawing.Point(118, 143)
+        Me.asunto2_txt.Name = "asunto2_txt"
+        Me.asunto2_txt.Size = New System.Drawing.Size(161, 20)
+        Me.asunto2_txt.TabIndex = 35
         '
         'label13
         '
@@ -389,12 +388,12 @@ Partial Class Form1
         Me.label13.TabIndex = 34
         Me.label13.Text = "ASUNTO:"
         '
-        'textBox8
+        'foliocdt2_txt
         '
-        Me.textBox8.Location = New System.Drawing.Point(118, 116)
-        Me.textBox8.Name = "textBox8"
-        Me.textBox8.Size = New System.Drawing.Size(100, 20)
-        Me.textBox8.TabIndex = 33
+        Me.foliocdt2_txt.Location = New System.Drawing.Point(118, 116)
+        Me.foliocdt2_txt.Name = "foliocdt2_txt"
+        Me.foliocdt2_txt.Size = New System.Drawing.Size(100, 20)
+        Me.foliocdt2_txt.TabIndex = 33
         '
         'label14
         '
@@ -408,6 +407,29 @@ Partial Class Form1
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'CDTDataSet
+        '
+        Me.CDTDataSet.DataSetName = "CDTDataSet"
+        Me.CDTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CDTDataSetBindingSource
+        '
+        Me.CDTDataSetBindingSource.DataSource = Me.CDTDataSet
+        Me.CDTDataSetBindingSource.Position = 0
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(24, 188)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(750, 419)
+        Me.DataGridView1.TabIndex = 38
+        '
+        'CDTDataSetBindingSource1
+        '
+        Me.CDTDataSetBindingSource1.DataSource = Me.CDTDataSet
+        Me.CDTDataSetBindingSource1.Position = 0
         '
         'Form1
         '
@@ -423,7 +445,10 @@ Partial Class Form1
         CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CDTDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CDTDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CDTDataSetBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -433,35 +458,38 @@ Partial Class Form1
     Friend WithEvents TabPage2 As TabPage
     Private WithEvents button2 As Button
     Private WithEvents label9 As Label
-    Private WithEvents checkedListBox2 As CheckedListBox
-    Private WithEvents textBox6 As TextBox
+    Private WithEvents accion_box As CheckedListBox
+    Private WithEvents observaciones_txt As TextBox
     Private WithEvents label12 As Label
     Private WithEvents btnPDF As Button
-    Private WithEvents textBox5 As TextBox
+    Private WithEvents asunto_txt As TextBox
     Private WithEvents label10 As Label
-    Private WithEvents textBox4 As TextBox
+    Private WithEvents procedencia_txt As TextBox
     Private WithEvents label8 As Label
-    Private WithEvents dateTimePicker2 As DateTimePicker
+    Private WithEvents requeridopara_txt As DateTimePicker
     Private WithEvents label7 As Label
     Private WithEvents label1 As Label
     Private WithEvents label6 As Label
-    Private WithEvents checkedListBox1 As CheckedListBox
-    Private WithEvents dateTimePicker1 As DateTimePicker
-    Private WithEvents textBox3 As TextBox
-    Private WithEvents textBox2 As TextBox
-    Private WithEvents textBox1 As TextBox
+    Private WithEvents dirigido_box As CheckedListBox
+    Private WithEvents fecharecibido_date As DateTimePicker
+    Private WithEvents itginp_txt As TextBox
+    Private WithEvents folioginp_txt As TextBox
+    Private WithEvents foliocdt_txt As TextBox
     Private WithEvents label5 As Label
     Private WithEvents label4 As Label
     Private WithEvents label3 As Label
     Private WithEvents label2 As Label
-    Private WithEvents dataGridView1 As DataGridView
     Private WithEvents button3 As Button
     Private WithEvents label15 As Label
-    Private WithEvents textBox7 As TextBox
+    Private WithEvents asunto2_txt As TextBox
     Private WithEvents label13 As Label
-    Private WithEvents textBox8 As TextBox
+    Private WithEvents foliocdt2_txt As TextBox
     Private WithEvents label14 As Label
     Friend WithEvents AxAcroPDF1 As AxAcroPDFLib.AxAcroPDF
     Private WithEvents Label11 As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents CDTDataSetBindingSource As BindingSource
+    Friend WithEvents CDTDataSet As CDTDataSet
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents CDTDataSetBindingSource1 As BindingSource
 End Class
