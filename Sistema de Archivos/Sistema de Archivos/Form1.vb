@@ -45,4 +45,8 @@ Public Class Form1
     Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
 
     End Sub
+
+    Private Sub dirigido_box_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dirigido_box.SelectedIndexChanged
+
+    End Sub
 End Class
