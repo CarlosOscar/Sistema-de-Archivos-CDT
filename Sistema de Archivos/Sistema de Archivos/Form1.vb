@@ -7,6 +7,7 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
         conexion.conectar()
         MostrarDatos()
 
@@ -14,21 +15,10 @@ Public Class Form1
     End Sub
 
     Public Sub MostrarDatos()
-        Dim con As New SqlConnection(My.Settings.Conexion)
-        Dim sql As String = "SELECT * FROM cdt_info"
-        Dim cmd As New SqlCommand(sql, con)
+        conexion.Consulta("Select * from cdt_info", "cdt_info")
+        Me.DataGridView1.DataSource = conexion.ds.Tables("cdt_info")
 
-        Try
-            Dim da As New SqlDataAdapter(cmd)
-            Dim ds As New DataSet
-            da.Fill(ds, "cdt_info")
 
-            Me.DataGridView1.DataSource = ds.Tables("cdt_info")
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-
-        End Try
 
     End Sub
 
@@ -59,7 +49,14 @@ Public Class Form1
     Private Sub Guardar_Click(sender As Object, e As EventArgs) Handles Guardar.Click
         Dim agregar As String = "insert into cdt_info values (" + foliocdt_txt.Text + ", " + folioginp_txt.Text + ", " + otginp_txt.Text + ", '" + fecharecibido_date.Value + "', '" + requeridopara_txt.Value + "',
         '" + procedencia_txt.Text + "' . '" + asunto_txt.Text + "', '" + observaciones_txt.Text + "', '" + CheckBox1.Text + "', '" + CheckBox2.Text + "', '" + CheckBox3.Text + "'. '" + CheckBox4.Text + "'. '" + CheckBox5.Text + "',
-           '" + CheckBox6.Text + "' "
+        '" + CheckBox6.Text + "', '" + CheckBox7.Text + "', '" + CheckBox8.Text + "', '" + CheckBox9.Text + "', '" + CheckBox10.Text + "', '" + CheckBox11.Text + "', '" + CheckBox12.Text + "', '" + CheckBox13.Text + "',
+        '" + CheckBox14.Text + "', '" + CheckBox15.Text + "', '" + CheckBox16.Text + "')"
 
+        If (conexion.Insertar(agregar)) Then
+            MessageBox.Show("Registro agregado correctamente")
+            MostrarDatos()
+        Else
+            MessageBox.Show("No se pudo agregar")
+        End If
     End Sub
 End Class

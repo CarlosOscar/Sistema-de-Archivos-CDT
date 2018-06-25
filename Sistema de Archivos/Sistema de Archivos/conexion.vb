@@ -4,6 +4,14 @@ Imports System.Windows.Forms
 Public Class conexion
     Public conexion As SqlConnection = New SqlConnection("Data Source=(localdb)\CDT;Initial Catalog=CDT;Integrated Security=True")
 
+
+
+    Private cmb As SqlCommandBuilder
+    Public ds As DataSet = New DataSet()
+    Public da As SqlDataAdapter
+    Public comando As SqlCommand
+
+
     Public Sub conectar()
         Try
             conexion.Open()
@@ -17,10 +25,6 @@ Public Class conexion
     End Sub
 
 
-    Private cmb As SqlCommandBuilder
-    Public ds As DataSet = New DataSet()
-    Public da As SqlDataAdapter
-    Public comando As SqlCommand
 
     Public Sub Consulta(ByVal sql As String, ByVal tabla As String)
 
