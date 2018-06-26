@@ -42,7 +42,7 @@ Partial Class Form1
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
+        Me.ArcPDF = New AxAcroPDFLib.AxAcroPDF()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Guardar = New System.Windows.Forms.Button()
         Me.label9 = New System.Windows.Forms.Label()
@@ -77,9 +77,10 @@ Partial Class Form1
         Me.CDTDataSetBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.CDTDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CDTDataSet = New Sistema_de_Archivos.CDTDataSet()
+        Me.txt_ruta = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ArcPDF, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CDTDataSetBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,6 +101,7 @@ Partial Class Form1
         'TabPage1
         '
         Me.TabPage1.AutoScroll = True
+        Me.TabPage1.Controls.Add(Me.txt_ruta)
         Me.TabPage1.Controls.Add(Me.CheckBox16)
         Me.TabPage1.Controls.Add(Me.CheckBox15)
         Me.TabPage1.Controls.Add(Me.CheckBox14)
@@ -116,7 +118,7 @@ Partial Class Form1
         Me.TabPage1.Controls.Add(Me.CheckBox3)
         Me.TabPage1.Controls.Add(Me.CheckBox2)
         Me.TabPage1.Controls.Add(Me.CheckBox1)
-        Me.TabPage1.Controls.Add(Me.AxAcroPDF1)
+        Me.TabPage1.Controls.Add(Me.ArcPDF)
         Me.TabPage1.Controls.Add(Me.Label11)
         Me.TabPage1.Controls.Add(Me.Guardar)
         Me.TabPage1.Controls.Add(Me.label9)
@@ -307,19 +309,19 @@ Partial Class Form1
         Me.CheckBox1.Text = "ING. AGUSTIN G. PATIÑO ACENCIO"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'AxAcroPDF1
+        'ArcPDF
         '
-        Me.AxAcroPDF1.Enabled = True
-        Me.AxAcroPDF1.Location = New System.Drawing.Point(634, 117)
-        Me.AxAcroPDF1.Name = "AxAcroPDF1"
-        Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxAcroPDF1.Size = New System.Drawing.Size(545, 567)
-        Me.AxAcroPDF1.TabIndex = 57
+        Me.ArcPDF.Enabled = True
+        Me.ArcPDF.Location = New System.Drawing.Point(634, 117)
+        Me.ArcPDF.Name = "ArcPDF"
+        Me.ArcPDF.OcxState = CType(resources.GetObject("ArcPDF.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.ArcPDF.Size = New System.Drawing.Size(545, 567)
+        Me.ArcPDF.TabIndex = 57
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(831, 51)
+        Me.Label11.Location = New System.Drawing.Point(831, 26)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(134, 13)
         Me.Label11.TabIndex = 56
@@ -362,7 +364,7 @@ Partial Class Form1
         '
         'btnPDF
         '
-        Me.btnPDF.Location = New System.Drawing.Point(871, 79)
+        Me.btnPDF.Location = New System.Drawing.Point(862, 51)
         Me.btnPDF.Name = "btnPDF"
         Me.btnPDF.Size = New System.Drawing.Size(66, 32)
         Me.btnPDF.TabIndex = 50
@@ -589,6 +591,13 @@ Partial Class Form1
         Me.CDTDataSet.DataSetName = "CDTDataSet"
         Me.CDTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'txt_ruta
+        '
+        Me.txt_ruta.Location = New System.Drawing.Point(788, 91)
+        Me.txt_ruta.Name = "txt_ruta"
+        Me.txt_ruta.Size = New System.Drawing.Size(215, 20)
+        Me.txt_ruta.TabIndex = 74
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -601,7 +610,7 @@ Partial Class Form1
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ArcPDF, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -633,7 +642,7 @@ Partial Class Form1
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents AxAcroPDF1 As AxAcroPDFLib.AxAcroPDF
+    Friend WithEvents ArcPDF As AxAcroPDFLib.AxAcroPDF
     Private WithEvents Label11 As Label
     Private WithEvents Guardar As Button
     Private WithEvents label9 As Label
@@ -665,4 +674,5 @@ Partial Class Form1
     Friend WithEvents CheckBox13 As CheckBox
     Friend WithEvents CheckBox12 As CheckBox
     Friend WithEvents CheckBox11 As CheckBox
+    Private WithEvents txt_ruta As TextBox
 End Class
