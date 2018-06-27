@@ -46,7 +46,7 @@ Public Class Form1
             ruta.Close() 'Cierro el FileStream 
 
             Dim cnn As New SqlConnection(conexion)
-            Dim cmm As New SqlCommand("sp_mant_info", cnn)
+            Dim cmm As New SqlCommand("sp_mant_infcdt", cnn)
             cmm.CommandType = CommandType.StoredProcedure
             cmm.Parameters.AddWithValue("@folioCDT", foliocdt_txt.Text)
             cmm.Parameters.AddWithValue("@folio_GINP", folioginp_txt.Text)
@@ -87,5 +87,14 @@ Public Class Form1
 
         End Try
 
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        Dim i = CheckBox1.Text
+        If CheckBox1.Checked = True Then
+            CheckBox1.Text = i
+        Else
+            CheckBox1.Text = ""
+        End If
     End Sub
 End Class

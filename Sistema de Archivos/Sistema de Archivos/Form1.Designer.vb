@@ -26,6 +26,7 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.txt_ruta = New System.Windows.Forms.TextBox()
         Me.CheckBox16 = New System.Windows.Forms.CheckBox()
         Me.CheckBox15 = New System.Windows.Forms.CheckBox()
         Me.CheckBox14 = New System.Windows.Forms.CheckBox()
@@ -77,7 +78,6 @@ Partial Class Form1
         Me.CDTDataSetBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.CDTDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CDTDataSet = New Sistema_de_Archivos.CDTDataSet()
-        Me.txt_ruta = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.ArcPDF, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -148,6 +148,13 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Agregar"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'txt_ruta
+        '
+        Me.txt_ruta.Location = New System.Drawing.Point(788, 91)
+        Me.txt_ruta.Name = "txt_ruta"
+        Me.txt_ruta.Size = New System.Drawing.Size(215, 20)
+        Me.txt_ruta.TabIndex = 74
         '
         'CheckBox16
         '
@@ -590,13 +597,6 @@ Partial Class Form1
         '
         Me.CDTDataSet.DataSetName = "CDTDataSet"
         Me.CDTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'txt_ruta
-        '
-        Me.txt_ruta.Location = New System.Drawing.Point(788, 91)
-        Me.txt_ruta.Name = "txt_ruta"
-        Me.txt_ruta.Size = New System.Drawing.Size(215, 20)
-        Me.txt_ruta.TabIndex = 74
         '
         'Form1
         '
