@@ -56,22 +56,86 @@ Public Class Form1
             cmm.Parameters.AddWithValue("@procedencia", procedencia_txt.Text)
             cmm.Parameters.AddWithValue("@asunto", asunto_txt.Text)
             cmm.Parameters.AddWithValue("@observaciones", observaciones_txt.Text)
-            cmm.Parameters.AddWithValue("@dirigido1", CheckBox1.Text)
-            cmm.Parameters.AddWithValue("@dirigido2", CheckBox2.Text)
-            cmm.Parameters.AddWithValue("@dirigido3", CheckBox3.Text)
-            cmm.Parameters.AddWithValue("@dirigido4", CheckBox4.Text)
-            cmm.Parameters.AddWithValue("@dirigido5", CheckBox5.Text)
-            cmm.Parameters.AddWithValue("@dirigido6", CheckBox6.Text)
-            cmm.Parameters.AddWithValue("@dirigido7", CheckBox7.Text)
-            cmm.Parameters.AddWithValue("@dirigido8", CheckBox8.Text)
-            cmm.Parameters.AddWithValue("@dirigido9", CheckBox9.Text)
-            cmm.Parameters.AddWithValue("@dirigido10", CheckBox10.Text)
-            cmm.Parameters.AddWithValue("@accion1", CheckBox11.Text)
-            cmm.Parameters.AddWithValue("@accion2", CheckBox12.Text)
-            cmm.Parameters.AddWithValue("@accion3", CheckBox13.Text)
-            cmm.Parameters.AddWithValue("@accion4", CheckBox14.Text)
-            cmm.Parameters.AddWithValue("@accion5", CheckBox15.Text)
-            cmm.Parameters.AddWithValue("@accion6", CheckBox16.Text)
+            If CheckBox1.Checked = True Then
+                cmm.Parameters.AddWithValue("@dirigido1", CheckBox1.Text)
+            Else
+                cmm.Parameters.AddWithValue("@dirigido1", DBNull.Value)
+            End If
+            If CheckBox2.Checked = True Then
+                cmm.Parameters.AddWithValue("@dirigido2", CheckBox2.Text)
+            Else
+                cmm.Parameters.AddWithValue("@dirigido2", DBNull.Value)
+            End If
+            If CheckBox3.Checked = True Then
+                cmm.Parameters.AddWithValue("@dirigido3", CheckBox3.Text)
+            Else
+                cmm.Parameters.AddWithValue("@dirigido3", DBNull.Value)
+            End If
+            If CheckBox4.Checked = True Then
+                cmm.Parameters.AddWithValue("@dirigido4", CheckBox4.Text)
+            Else
+                cmm.Parameters.AddWithValue("@dirigido4", DBNull.Value)
+            End If
+            If CheckBox5.Checked = True Then
+                cmm.Parameters.AddWithValue("@dirigido5", CheckBox5.Text)
+            Else
+                cmm.Parameters.AddWithValue("@dirigido5", DBNull.Value)
+            End If
+            If CheckBox6.Checked = True Then
+                cmm.Parameters.AddWithValue("@dirigido6", CheckBox6.Text)
+            Else
+                cmm.Parameters.AddWithValue("@dirigido6", DBNull.Value)
+            End If
+            If CheckBox7.Checked = True Then
+                cmm.Parameters.AddWithValue("@dirigido7", CheckBox7.Text)
+            Else
+                cmm.Parameters.AddWithValue("@dirigido7", DBNull.Value)
+            End If
+            If CheckBox8.Checked = True Then
+                cmm.Parameters.AddWithValue("@dirigido8", CheckBox8.Text)
+            Else
+                cmm.Parameters.AddWithValue("@dirigido8", DBNull.Value)
+            End If
+            If CheckBox9.Checked = True Then
+                cmm.Parameters.AddWithValue("@dirigido9", CheckBox9.Text)
+            Else
+                cmm.Parameters.AddWithValue("@dirigido9", DBNull.Value)
+            End If
+            If CheckBox10.Checked = True Then
+                cmm.Parameters.AddWithValue("@dirigido10", CheckBox10.Text)
+            Else
+                cmm.Parameters.AddWithValue("@dirigido10", DBNull.Value)
+            End If
+            If CheckBox11.Checked = True Then
+                cmm.Parameters.AddWithValue("@accion1", CheckBox11.Text)
+            Else
+                cmm.Parameters.AddWithValue("@accion1", DBNull.Value)
+            End If
+            If CheckBox12.Checked = True Then
+                cmm.Parameters.AddWithValue("@accion2", CheckBox12.Text)
+            Else
+                cmm.Parameters.AddWithValue("@accion2", DBNull.Value)
+            End If
+            If CheckBox13.Checked = True Then
+                cmm.Parameters.AddWithValue("@accion3", CheckBox13.Text)
+            Else
+                cmm.Parameters.AddWithValue("@accion3", DBNull.Value)
+            End If
+            If CheckBox14.Checked = True Then
+                cmm.Parameters.AddWithValue("@accion4", CheckBox14.Text)
+            Else
+                cmm.Parameters.AddWithValue("@accion4", DBNull.Value)
+            End If
+            If CheckBox15.Checked = True Then
+                cmm.Parameters.AddWithValue("@accion5", CheckBox15.Text)
+            Else
+                cmm.Parameters.AddWithValue("@accion5", DBNull.Value)
+            End If
+            If CheckBox16.Checked = True Then
+                cmm.Parameters.AddWithValue("@accion6", CheckBox16.Text)
+            Else
+                cmm.Parameters.AddWithValue("@accion6", DBNull.Value)
+            End If
             cmm.Parameters.AddWithValue("@arch_pdf", binario)
             'ejecutar
             Try
@@ -87,14 +151,11 @@ Public Class Form1
 
         End Try
 
+
+
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        Dim i = CheckBox1.Text
-        If CheckBox1.Checked = True Then
-            CheckBox1.Text = i
-        Else
-            CheckBox1.Text = ""
-        End If
+     
     End Sub
 End Class
