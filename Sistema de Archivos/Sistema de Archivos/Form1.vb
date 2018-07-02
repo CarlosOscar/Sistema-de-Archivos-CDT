@@ -141,6 +141,34 @@ Public Class Form1
             Try
                 cnn.Open()
                 cmm.ExecuteNonQuery()
+
+                MsgBox("Datos registrados correctamente", vbInformation)
+
+                foliocdt_txt.Text = ""
+                folioginp_txt.Text = ""
+                otginp_txt.Text = ""
+                procedencia_txt.Text = ""
+                observaciones_txt.Text = ""
+                asunto_txt.Text = ""
+                txt_ruta.Text = ""
+                CheckBox1.Checked = False
+                CheckBox2.Checked = False
+                CheckBox3.Checked = False
+                CheckBox4.Checked = False
+                CheckBox5.Checked = False
+                CheckBox6.Checked = False
+                CheckBox7.Checked = False
+                CheckBox8.Checked = False
+                CheckBox9.Checked = False
+                CheckBox10.Checked = False
+                CheckBox11.Checked = False
+                CheckBox12.Checked = False
+                CheckBox13.Checked = False
+                CheckBox14.Checked = False
+                CheckBox15.Checked = False
+                CheckBox16.Checked = False
+                ArcPDF.LoadFile("nada.pdf")
+
             Catch ex As Exception
                 MsgBox(ex.Message)
             Finally
@@ -150,7 +178,6 @@ Public Class Form1
         Catch ex As Exception
 
         End Try
-
 
 
     End Sub
