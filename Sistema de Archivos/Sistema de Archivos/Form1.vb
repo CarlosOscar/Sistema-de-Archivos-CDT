@@ -11,7 +11,7 @@ Public Class Form1
 
 
 
-
+        refrescar()
 
     End Sub
 
@@ -168,7 +168,7 @@ Public Class Form1
                 CheckBox15.Checked = False
                 CheckBox16.Checked = False
                 ArcPDF.LoadFile("nada.pdf")
-
+                refrescar()
             Catch ex As Exception
                 MsgBox(ex.Message)
             Finally
@@ -182,7 +182,31 @@ Public Class Form1
 
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-     
+    Public Sub refrescar()
+        Try
+            Dim con As New SqlConnection(conexion)
+            Dim sql As String = "SELECT * FROM cdt_informacion"
+            Dim cmm As New SqlCommand(sql, con)
+
+
+            Try
+
+                Dim da As New SqlDataAdapter(cmm)
+                Dim ds As New DataSet
+                da.Fill(ds, "cdt_informacion")
+
+                Me.DataGridView1.DataSource = ds.Tables("cdt_informacion")
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+
+
+            Finally
+                con.Dispose()
+                cmm.Dispose()
+            End Try
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

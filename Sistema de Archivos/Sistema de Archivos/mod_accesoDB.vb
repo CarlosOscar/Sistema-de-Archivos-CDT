@@ -2,7 +2,7 @@
 Module mod_accesoDB
     Dim cnn As SqlConnection
     Private cmb As SqlCommandBuilder
-    Public ds As DataSet = New DataSet()
+
     Public da As SqlDataAdapter
     Dim cmd As SqlCommand
     Public dr As SqlDataReader
