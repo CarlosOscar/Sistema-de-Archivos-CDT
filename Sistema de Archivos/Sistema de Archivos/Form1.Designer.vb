@@ -78,6 +78,7 @@ Partial Class Form1
         Me.CDTDataSetBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.CDTDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CDTDataSet = New Sistema_de_Archivos.CDTDataSet()
+        Me.ArcPDF2 = New AxAcroPDFLib.AxAcroPDF()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.ArcPDF, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,10 +87,14 @@ Partial Class Form1
         CType(Me.CDTDataSetBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CDTDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CDTDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ArcPDF2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
         '
+        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(-2, -3)
@@ -151,6 +156,7 @@ Partial Class Form1
         '
         'txt_ruta
         '
+        Me.txt_ruta.Enabled = False
         Me.txt_ruta.Location = New System.Drawing.Point(788, 91)
         Me.txt_ruta.Name = "txt_ruta"
         Me.txt_ruta.Size = New System.Drawing.Size(215, 20)
@@ -516,6 +522,7 @@ Partial Class Form1
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.ArcPDF2)
         Me.TabPage2.Controls.Add(Me.DataGridView1)
         Me.TabPage2.Controls.Add(Me.button3)
         Me.TabPage2.Controls.Add(Me.label15)
@@ -536,7 +543,7 @@ Partial Class Form1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(24, 188)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(750, 419)
+        Me.DataGridView1.Size = New System.Drawing.Size(485, 607)
         Me.DataGridView1.TabIndex = 38
         '
         'button3
@@ -598,6 +605,15 @@ Partial Class Form1
         Me.CDTDataSet.DataSetName = "CDTDataSet"
         Me.CDTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'ArcPDF2
+        '
+        Me.ArcPDF2.Enabled = True
+        Me.ArcPDF2.Location = New System.Drawing.Point(559, 39)
+        Me.ArcPDF2.Name = "ArcPDF2"
+        Me.ArcPDF2.OcxState = CType(resources.GetObject("ArcPDF2.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.ArcPDF2.Size = New System.Drawing.Size(632, 756)
+        Me.ArcPDF2.TabIndex = 58
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -617,6 +633,7 @@ Partial Class Form1
         CType(Me.CDTDataSetBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CDTDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CDTDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ArcPDF2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -675,4 +692,5 @@ Partial Class Form1
     Friend WithEvents CheckBox12 As CheckBox
     Friend WithEvents CheckBox11 As CheckBox
     Private WithEvents txt_ruta As TextBox
+    Friend WithEvents ArcPDF2 As AxAcroPDFLib.AxAcroPDF
 End Class

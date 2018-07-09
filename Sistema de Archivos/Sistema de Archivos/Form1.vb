@@ -12,6 +12,7 @@ Public Class Form1
 
 
         refrescar()
+        Ocultar()
 
     End Sub
 
@@ -169,6 +170,7 @@ Public Class Form1
                 CheckBox16.Checked = False
                 ArcPDF.LoadFile("nada.pdf")
                 refrescar()
+                Ocultar()
             Catch ex As Exception
                 MsgBox(ex.Message)
             Finally
@@ -208,5 +210,63 @@ Public Class Form1
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub button3_Click(sender As Object, e As EventArgs) Handles button3.Click
+        Try
+            Dim directorioArchivo As String
+            directorioArchivo = System.AppDomain.CurrentDomain.BaseDirectory() & "temp.pdf"
+
+            Dim str_cadena As String
+            str_cadena = " select * from cdt_informacion where folioCDT=" & foliocdt2_txt.Text
+            If conectar() = False Then
+                Exit Sub
+            End If
+            dr = fun_ExecuteReader(str_cadena)
+            If dr.HasRows Then
+                While dr.Read
+                    foliocdt2_txt.Text = dr("folioCDT")
+
+                    If dr("arch_pdf") IsNot DBNull.Value Then
+                        Dim bytes() As Byte
+                        bytes = dr("arch_pdf")
+
+                        BytesAArchivo(bytes, directorioArchivo)
+                        ArcPDF2.src = directorioArchivo
+                        My.Computer.FileSystem.DeleteFile(directorioArchivo)
+                        foliocdt2_txt.Text = ""
+                    End If
+                End While
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BytesAArchivo(ByVal bytes() As Byte, ByVal Path As String)
+        Dim K As Long
+        If bytes Is Nothing Then Exit Sub
+        Try
+            K = UBound(bytes)
+            Dim fs As New FileStream(Path, FileMode.OpenOrCreate, FileAccess.Write)
+            fs.Write(bytes, 0, K)
+            fs.Close()
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex)
+        End Try
+    End Sub
+
+    Public Sub Ocultar()
+        Me.DataGridView1.Columns("arch_pdf").Visible = False
+    End Sub
+
+
+
+    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
+        Dim i As Integer
+        Dim k As Integer
+        i = DataGridView1.CurrentRow.Index
+        k = DataGridView1.CurrentCell.ColumnIndex
+        foliocdt2_txt.Text = DataGridView1.Item(k, i).Value
     End Sub
 End Class

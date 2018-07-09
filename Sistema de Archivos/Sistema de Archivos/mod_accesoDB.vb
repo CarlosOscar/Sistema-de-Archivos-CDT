@@ -36,7 +36,22 @@ Module mod_accesoDB
         End Try
     End Function
 
-
+    Public Function fun_ExecuteReader(ByVal cadenasql As String, Optional i As Integer = 0) As SqlDataReader
+        Try
+            cmd = New SqlCommand
+            cmd.CommandText = cadenasql
+            If i = 0 Then
+                cmd.CommandType = CommandType.Text
+            Else
+                cmd.CommandType = CommandType.StoredProcedure
+            End If
+            cmd.Connection = cnn
+            Return cmd.ExecuteReader()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
 
 
 
