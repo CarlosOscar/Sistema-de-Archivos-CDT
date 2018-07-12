@@ -226,6 +226,7 @@ Public Class Form1
             If dr.HasRows Then
                 While dr.Read
                     foliocdt2_txt.Text = dr("folioCDT")
+                    observaciones2_txt.Text = dr("observaciones")
 
                     If dr("arch_pdf") IsNot DBNull.Value Then
                         Dim bytes() As Byte
@@ -234,7 +235,7 @@ Public Class Form1
                         BytesAArchivo(bytes, directorioArchivo)
                         ArcPDF2.src = directorioArchivo
                         My.Computer.FileSystem.DeleteFile(directorioArchivo)
-                        foliocdt2_txt.Text = ""
+
                     End If
                 End While
             End If
@@ -268,5 +269,34 @@ Public Class Form1
         i = DataGridView1.CurrentRow.Index
         k = DataGridView1.CurrentCell.ColumnIndex
         foliocdt2_txt.Text = DataGridView1.Item(k, i).Value
+    End Sub
+
+
+
+    Private Sub asunto2_txt_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Try
+            Dim str_cadena As String
+            str_cadena = " UPDATE cdt_informacion SET observaciones = '" & observaciones2_txt.Text & "' where folioCDT=" & foliocdt2_txt.Text
+            If conectar() = False Then
+                Exit Sub
+            End If
+            dr = fun_ExecuteReader(str_cadena)
+            If dr.HasRows Then
+                While dr.Read
+
+
+                End While
+            End If
+            MsgBox("Datos actualizados correctamente", vbInformation)
+
+            refrescar()
+            Ocultar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

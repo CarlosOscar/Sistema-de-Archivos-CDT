@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
@@ -67,10 +67,11 @@ Partial Class Form1
         Me.label3 = New System.Windows.Forms.Label()
         Me.label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ArcPDF2 = New AxAcroPDFLib.AxAcroPDF()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.button3 = New System.Windows.Forms.Button()
         Me.label15 = New System.Windows.Forms.Label()
-        Me.asunto2_txt = New System.Windows.Forms.TextBox()
         Me.label13 = New System.Windows.Forms.Label()
         Me.foliocdt2_txt = New System.Windows.Forms.TextBox()
         Me.label14 = New System.Windows.Forms.Label()
@@ -78,16 +79,17 @@ Partial Class Form1
         Me.CDTDataSetBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.CDTDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CDTDataSet = New Sistema_de_Archivos.CDTDataSet()
-        Me.ArcPDF2 = New AxAcroPDFLib.AxAcroPDF()
+        Me.observaciones2_txt = New System.Windows.Forms.TextBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.ArcPDF, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
+        CType(Me.ArcPDF2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CDTDataSetBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CDTDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CDTDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ArcPDF2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -522,11 +524,13 @@ Partial Class Form1
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Button2)
+        Me.TabPage2.Controls.Add(Me.observaciones2_txt)
+        Me.TabPage2.Controls.Add(Me.Button1)
         Me.TabPage2.Controls.Add(Me.ArcPDF2)
         Me.TabPage2.Controls.Add(Me.DataGridView1)
         Me.TabPage2.Controls.Add(Me.button3)
         Me.TabPage2.Controls.Add(Me.label15)
-        Me.TabPage2.Controls.Add(Me.asunto2_txt)
         Me.TabPage2.Controls.Add(Me.label13)
         Me.TabPage2.Controls.Add(Me.foliocdt2_txt)
         Me.TabPage2.Controls.Add(Me.label14)
@@ -538,51 +542,62 @@ Partial Class Form1
         Me.TabPage2.Text = "Consultar"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(133, 703)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(236, 56)
+        Me.Button1.TabIndex = 59
+        Me.Button1.Text = "Consultar por asunto"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'ArcPDF2
+        '
+        Me.ArcPDF2.Enabled = True
+        Me.ArcPDF2.Location = New System.Drawing.Point(559, 39)
+        Me.ArcPDF2.Name = "ArcPDF2"
+        Me.ArcPDF2.OcxState = CType(resources.GetObject("ArcPDF2.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.ArcPDF2.Size = New System.Drawing.Size(632, 756)
+        Me.ArcPDF2.TabIndex = 58
+        '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(24, 188)
+        Me.DataGridView1.Location = New System.Drawing.Point(10, 293)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(485, 607)
+        Me.DataGridView1.Size = New System.Drawing.Size(503, 365)
         Me.DataGridView1.TabIndex = 38
         '
         'button3
         '
-        Me.button3.Location = New System.Drawing.Point(356, 114)
+        Me.button3.Location = New System.Drawing.Point(214, 51)
         Me.button3.Name = "button3"
-        Me.button3.Size = New System.Drawing.Size(153, 49)
+        Me.button3.Size = New System.Drawing.Size(299, 34)
         Me.button3.TabIndex = 37
-        Me.button3.Text = "Consultar/Ver"
+        Me.button3.Text = "Consultar por folio"
         Me.button3.UseVisualStyleBackColor = True
         '
         'label15
         '
         Me.label15.AutoSize = True
-        Me.label15.Location = New System.Drawing.Point(382, 49)
+        Me.label15.Location = New System.Drawing.Point(414, 17)
         Me.label15.Name = "label15"
         Me.label15.Size = New System.Drawing.Size(51, 13)
         Me.label15.TabIndex = 36
         Me.label15.Text = "Consulta "
         '
-        'asunto2_txt
-        '
-        Me.asunto2_txt.Location = New System.Drawing.Point(118, 143)
-        Me.asunto2_txt.Name = "asunto2_txt"
-        Me.asunto2_txt.Size = New System.Drawing.Size(161, 20)
-        Me.asunto2_txt.TabIndex = 35
-        '
         'label13
         '
         Me.label13.AutoSize = True
-        Me.label13.Location = New System.Drawing.Point(58, 150)
+        Me.label13.Location = New System.Drawing.Point(164, 125)
         Me.label13.Name = "label13"
-        Me.label13.Size = New System.Drawing.Size(55, 13)
+        Me.label13.Size = New System.Drawing.Size(78, 13)
         Me.label13.TabIndex = 34
-        Me.label13.Text = "ASUNTO:"
+        Me.label13.Text = "Observaciones"
         '
         'foliocdt2_txt
         '
-        Me.foliocdt2_txt.Location = New System.Drawing.Point(118, 116)
+        Me.foliocdt2_txt.Location = New System.Drawing.Point(90, 59)
         Me.foliocdt2_txt.Name = "foliocdt2_txt"
         Me.foliocdt2_txt.Size = New System.Drawing.Size(100, 20)
         Me.foliocdt2_txt.TabIndex = 33
@@ -590,7 +605,7 @@ Partial Class Form1
         'label14
         '
         Me.label14.AutoSize = True
-        Me.label14.Location = New System.Drawing.Point(58, 123)
+        Me.label14.Location = New System.Drawing.Point(30, 59)
         Me.label14.Name = "label14"
         Me.label14.Size = New System.Drawing.Size(54, 13)
         Me.label14.TabIndex = 32
@@ -605,14 +620,22 @@ Partial Class Form1
         Me.CDTDataSet.DataSetName = "CDTDataSet"
         Me.CDTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'ArcPDF2
+        'observaciones2_txt
         '
-        Me.ArcPDF2.Enabled = True
-        Me.ArcPDF2.Location = New System.Drawing.Point(559, 39)
-        Me.ArcPDF2.Name = "ArcPDF2"
-        Me.ArcPDF2.OcxState = CType(resources.GetObject("ArcPDF2.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.ArcPDF2.Size = New System.Drawing.Size(632, 756)
-        Me.ArcPDF2.TabIndex = 58
+        Me.observaciones2_txt.Location = New System.Drawing.Point(33, 151)
+        Me.observaciones2_txt.Multiline = True
+        Me.observaciones2_txt.Name = "observaciones2_txt"
+        Me.observaciones2_txt.Size = New System.Drawing.Size(350, 125)
+        Me.observaciones2_txt.TabIndex = 60
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(403, 168)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(110, 81)
+        Me.Button2.TabIndex = 61
+        Me.Button2.Text = "Actualizar Observaciones"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -629,11 +652,11 @@ Partial Class Form1
         CType(Me.ArcPDF, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        CType(Me.ArcPDF2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CDTDataSetBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CDTDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CDTDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ArcPDF2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -642,7 +665,6 @@ Partial Class Form1
     Friend WithEvents TabPage2 As TabPage
     Private WithEvents button3 As Button
     Private WithEvents label15 As Label
-    Private WithEvents asunto2_txt As TextBox
     Private WithEvents label13 As Label
     Private WithEvents foliocdt2_txt As TextBox
     Private WithEvents label14 As Label
@@ -693,4 +715,7 @@ Partial Class Form1
     Friend WithEvents CheckBox11 As CheckBox
     Private WithEvents txt_ruta As TextBox
     Friend WithEvents ArcPDF2 As AxAcroPDFLib.AxAcroPDF
+    Private WithEvents Button1 As Button
+    Private WithEvents observaciones2_txt As TextBox
+    Friend WithEvents Button2 As Button
 End Class

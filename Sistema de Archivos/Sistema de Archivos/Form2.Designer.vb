@@ -125,7 +125,7 @@ Partial Class Form2
         Me.AxAcroPDF2.Location = New System.Drawing.Point(12, 12)
         Me.AxAcroPDF2.Name = "AxAcroPDF2"
         Me.AxAcroPDF2.OcxState = CType(resources.GetObject("AxAcroPDF2.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxAcroPDF2.Size = New System.Drawing.Size(376, 470)
+        Me.AxAcroPDF2.Size = New System.Drawing.Size(376, 573)
         Me.AxAcroPDF2.TabIndex = 27
         '
         'Form2
