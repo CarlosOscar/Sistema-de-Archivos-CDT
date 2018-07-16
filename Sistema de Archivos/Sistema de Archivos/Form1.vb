@@ -299,4 +299,8 @@ Public Class Form1
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub CnsxAsunto_Click(sender As Object, e As EventArgs) Handles CnsxAsunto.Click
+        Form2.Show()
+    End Sub
 End Class

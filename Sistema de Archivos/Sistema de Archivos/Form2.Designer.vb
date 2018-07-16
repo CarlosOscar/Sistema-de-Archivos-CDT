@@ -23,144 +23,127 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
-        Me.label2 = New System.Windows.Forms.Label()
-        Me.button3 = New System.Windows.Forms.Button()
         Me.button2 = New System.Windows.Forms.Button()
-        Me.button1 = New System.Windows.Forms.Button()
-        Me.textBox2 = New System.Windows.Forms.TextBox()
-        Me.label3 = New System.Windows.Forms.Label()
-        Me.textBox1 = New System.Windows.Forms.TextBox()
+        Me.observaciones3txt = New System.Windows.Forms.TextBox()
         Me.label1 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
-        Me.AxAcroPDF2 = New AxAcroPDFLib.AxAcroPDF()
-        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AxAcroPDF2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ArcPDF3 = New AxAcroPDFLib.AxAcroPDF()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.asunto3txt = New System.Windows.Forms.TextBox()
+        Me.Asunto3 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        CType(Me.ArcPDF3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'label2
-        '
-        Me.label2.AutoSize = True
-        Me.label2.Location = New System.Drawing.Point(749, 15)
-        Me.label2.Name = "label2"
-        Me.label2.Size = New System.Drawing.Size(35, 13)
-        Me.label2.TabIndex = 25
-        Me.label2.Text = "Ver. 2"
-        '
-        'button3
-        '
-        Me.button3.Location = New System.Drawing.Point(477, 189)
-        Me.button3.Name = "button3"
-        Me.button3.Size = New System.Drawing.Size(213, 64)
-        Me.button3.TabIndex = 24
-        Me.button3.Text = "Guardar Cambios"
-        Me.button3.UseVisualStyleBackColor = True
         '
         'button2
         '
-        Me.button2.Location = New System.Drawing.Point(638, 74)
+        Me.button2.Location = New System.Drawing.Point(814, 179)
         Me.button2.Name = "button2"
-        Me.button2.Size = New System.Drawing.Size(119, 23)
+        Me.button2.Size = New System.Drawing.Size(80, 45)
         Me.button2.TabIndex = 23
         Me.button2.Text = "Editar Observación"
         Me.button2.UseVisualStyleBackColor = True
         '
-        'button1
+        'observaciones3txt
         '
-        Me.button1.Location = New System.Drawing.Point(638, 139)
-        Me.button1.Name = "button1"
-        Me.button1.Size = New System.Drawing.Size(119, 23)
-        Me.button1.TabIndex = 22
-        Me.button1.Text = "Editar Respuesta"
-        Me.button1.UseVisualStyleBackColor = True
-        '
-        'textBox2
-        '
-        Me.textBox2.Location = New System.Drawing.Point(397, 142)
-        Me.textBox2.Name = "textBox2"
-        Me.textBox2.Size = New System.Drawing.Size(221, 20)
-        Me.textBox2.TabIndex = 21
-        '
-        'label3
-        '
-        Me.label3.AutoSize = True
-        Me.label3.Location = New System.Drawing.Point(394, 126)
-        Me.label3.Name = "label3"
-        Me.label3.Size = New System.Drawing.Size(61, 13)
-        Me.label3.TabIndex = 20
-        Me.label3.Text = "Respuesta:"
-        '
-        'textBox1
-        '
-        Me.textBox1.Location = New System.Drawing.Point(397, 77)
-        Me.textBox1.Name = "textBox1"
-        Me.textBox1.Size = New System.Drawing.Size(221, 20)
-        Me.textBox1.TabIndex = 19
+        Me.observaciones3txt.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.observaciones3txt.Location = New System.Drawing.Point(540, 155)
+        Me.observaciones3txt.Multiline = True
+        Me.observaciones3txt.Name = "observaciones3txt"
+        Me.observaciones3txt.Size = New System.Drawing.Size(254, 90)
+        Me.observaciones3txt.TabIndex = 19
         '
         'label1
         '
         Me.label1.AutoSize = True
-        Me.label1.Location = New System.Drawing.Point(394, 61)
+        Me.label1.Location = New System.Drawing.Point(764, 9)
         Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(78, 13)
+        Me.label1.Size = New System.Drawing.Size(102, 13)
         Me.label1.TabIndex = 18
-        Me.label1.Text = "Observaciones"
+        Me.label1.Text = "Consulta por Asunto"
         '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'AxAcroPDF1
+        'ArcPDF3
         '
-        Me.AxAcroPDF1.Enabled = True
-        Me.AxAcroPDF1.Location = New System.Drawing.Point(711, 558)
-        Me.AxAcroPDF1.Name = "AxAcroPDF1"
-        Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxAcroPDF1.Size = New System.Drawing.Size(192, 192)
-        Me.AxAcroPDF1.TabIndex = 26
+        Me.ArcPDF3.Enabled = True
+        Me.ArcPDF3.Location = New System.Drawing.Point(12, 35)
+        Me.ArcPDF3.Name = "ArcPDF3"
+        Me.ArcPDF3.OcxState = CType(resources.GetObject("ArcPDF3.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.ArcPDF3.Size = New System.Drawing.Size(495, 758)
+        Me.ArcPDF3.TabIndex = 27
         '
-        'AxAcroPDF2
+        'DataGridView2
         '
-        Me.AxAcroPDF2.Enabled = True
-        Me.AxAcroPDF2.Location = New System.Drawing.Point(12, 12)
-        Me.AxAcroPDF2.Name = "AxAcroPDF2"
-        Me.AxAcroPDF2.OcxState = CType(resources.GetObject("AxAcroPDF2.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxAcroPDF2.Size = New System.Drawing.Size(376, 573)
-        Me.AxAcroPDF2.TabIndex = 27
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(540, 291)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(663, 502)
+        Me.DataGridView2.TabIndex = 28
+        '
+        'asunto3txt
+        '
+        Me.asunto3txt.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.asunto3txt.Location = New System.Drawing.Point(545, 69)
+        Me.asunto3txt.Multiline = True
+        Me.asunto3txt.Name = "asunto3txt"
+        Me.asunto3txt.Size = New System.Drawing.Size(413, 24)
+        Me.asunto3txt.TabIndex = 29
+        '
+        'Asunto3
+        '
+        Me.Asunto3.Location = New System.Drawing.Point(964, 69)
+        Me.Asunto3.Name = "Asunto3"
+        Me.Asunto3.Size = New System.Drawing.Size(139, 24)
+        Me.Asunto3.TabIndex = 30
+        Me.Asunto3.Text = "Buscar por asunto"
+        Me.Asunto3.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(542, 43)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(218, 13)
+        Me.Label2.TabIndex = 31
+        Me.Label2.Text = "Introduzca un fragmento del asunto a buscar"
         '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 635)
-        Me.Controls.Add(Me.AxAcroPDF2)
-        Me.Controls.Add(Me.AxAcroPDF1)
-        Me.Controls.Add(Me.label2)
-        Me.Controls.Add(Me.button3)
+        Me.ClientSize = New System.Drawing.Size(1215, 826)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Asunto3)
+        Me.Controls.Add(Me.asunto3txt)
+        Me.Controls.Add(Me.DataGridView2)
+        Me.Controls.Add(Me.ArcPDF3)
         Me.Controls.Add(Me.button2)
-        Me.Controls.Add(Me.button1)
-        Me.Controls.Add(Me.textBox2)
-        Me.Controls.Add(Me.label3)
-        Me.Controls.Add(Me.textBox1)
+        Me.Controls.Add(Me.observaciones3txt)
         Me.Controls.Add(Me.label1)
         Me.Name = "Form2"
         Me.Text = "Form2"
-        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AxAcroPDF2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        CType(Me.ArcPDF3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Private WithEvents label2 As Label
-    Private WithEvents button3 As Button
     Private WithEvents button2 As Button
-    Private WithEvents button1 As Button
-    Private WithEvents textBox2 As TextBox
-    Private WithEvents label3 As Label
-    Private WithEvents textBox1 As TextBox
+    Private WithEvents observaciones3txt As TextBox
     Private WithEvents label1 As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents AxAcroPDF1 As AxAcroPDFLib.AxAcroPDF
-    Friend WithEvents AxAcroPDF2 As AxAcroPDFLib.AxAcroPDF
+    Friend WithEvents ArcPDF3 As AxAcroPDFLib.AxAcroPDF
+    Friend WithEvents DataGridView2 As DataGridView
+    Private WithEvents asunto3txt As TextBox
+    Private WithEvents Asunto3 As Button
+    Private WithEvents Label2 As Label
 End Class
