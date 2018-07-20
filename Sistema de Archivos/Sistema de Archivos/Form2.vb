@@ -46,8 +46,6 @@ Public Class Form2
     End Sub
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
         refrescar()
         Ocultar()
     End Sub
