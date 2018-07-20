@@ -32,13 +32,15 @@ Partial Class Form2
         Me.asunto3txt = New System.Windows.Forms.TextBox()
         Me.Asunto3 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.foliocdt3_txt = New System.Windows.Forms.TextBox()
         CType(Me.ArcPDF3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'button2
         '
-        Me.button2.Location = New System.Drawing.Point(814, 179)
+        Me.button2.Location = New System.Drawing.Point(809, 215)
         Me.button2.Name = "button2"
         Me.button2.Size = New System.Drawing.Size(80, 45)
         Me.button2.TabIndex = 23
@@ -50,7 +52,7 @@ Partial Class Form2
         Me.observaciones3txt.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.observaciones3txt.Location = New System.Drawing.Point(540, 155)
+        Me.observaciones3txt.Location = New System.Drawing.Point(540, 192)
         Me.observaciones3txt.Multiline = True
         Me.observaciones3txt.Name = "observaciones3txt"
         Me.observaciones3txt.Size = New System.Drawing.Size(254, 90)
@@ -81,7 +83,7 @@ Partial Class Form2
         'DataGridView2
         '
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(540, 291)
+        Me.DataGridView2.Location = New System.Drawing.Point(528, 291)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.Size = New System.Drawing.Size(663, 502)
         Me.DataGridView2.TabIndex = 28
@@ -115,11 +117,30 @@ Partial Class Form2
         Me.Label2.TabIndex = 31
         Me.Label2.Text = "Introduzca un fragmento del asunto a buscar"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(542, 161)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(32, 13)
+        Me.Label3.TabIndex = 32
+        Me.Label3.Text = "Folio:"
+        '
+        'foliocdt3_txt
+        '
+        Me.foliocdt3_txt.Enabled = False
+        Me.foliocdt3_txt.Location = New System.Drawing.Point(580, 154)
+        Me.foliocdt3_txt.Name = "foliocdt3_txt"
+        Me.foliocdt3_txt.Size = New System.Drawing.Size(100, 20)
+        Me.foliocdt3_txt.TabIndex = 33
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1215, 826)
+        Me.Controls.Add(Me.foliocdt3_txt)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Asunto3)
         Me.Controls.Add(Me.asunto3txt)
@@ -146,4 +167,6 @@ Partial Class Form2
     Private WithEvents asunto3txt As TextBox
     Private WithEvents Asunto3 As Button
     Private WithEvents Label2 As Label
+    Private WithEvents Label3 As Label
+    Friend WithEvents foliocdt3_txt As TextBox
 End Class

@@ -18,9 +18,7 @@ Public Class Form1
 
 
 
-    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
 
-    End Sub
 
     Private Sub button1_Click(sender As Object, e As EventArgs) Handles btnPDF.Click
         Try
@@ -269,6 +267,7 @@ Public Class Form1
         i = DataGridView1.CurrentRow.Index
         k = DataGridView1.CurrentCell.ColumnIndex
         foliocdt2_txt.Text = DataGridView1.Item(k, i).Value
+
     End Sub
 
 
