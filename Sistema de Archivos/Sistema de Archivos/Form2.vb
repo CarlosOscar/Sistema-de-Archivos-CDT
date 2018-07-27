@@ -145,4 +145,8 @@ Public Class Form2
         End Try
 
     End Sub
+
+    Private Sub ArcPDF3_OnError(sender As Object, e As EventArgs) Handles ArcPDF3.OnError
+
+    End Sub
 End Class
