@@ -76,7 +76,7 @@ Public Class Form2
     Private Sub Asunto3_Click(sender As Object, e As EventArgs) Handles Asunto3.Click
         Try
             Dim con As New SqlConnection(conexion)
-            Dim sql As String = "SELECT * FROM cdt_informacion where asunto Like %'" & asunto3txt.Text & "'%"
+            Dim sql As String = "SELECT * FROM cdt_informacion where asunto Like '%" & asunto3txt.Text & "%'"
             Dim cmm As New SqlCommand(sql, con)
 
 
@@ -146,7 +146,15 @@ Public Class Form2
 
     End Sub
 
-    Private Sub ArcPDF3_OnError(sender As Object, e As EventArgs) Handles ArcPDF3.OnError
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        asunto3txt.Text = ""
+        foliocdt3_txt.Text = ""
+        observaciones3txt.Text = ""
+
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        refrescar()
 
     End Sub
 End Class
