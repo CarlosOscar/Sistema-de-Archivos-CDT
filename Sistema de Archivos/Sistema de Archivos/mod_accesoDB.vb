@@ -7,7 +7,7 @@ Module mod_accesoDB
     Dim cmd As SqlCommand
     Public dr As SqlDataReader
 
-    Public conexion As String = "Data Source=192.168.1.98,1433;Initial Catalog=CDT; user id=usuario;password=sistemacdt;"
+    Public conexion As String = "Data Source=(localdb)\CDT;Initial Catalog=CDT;Integrated Security=True"
 
     Public Function conectar() As Boolean
         Try
