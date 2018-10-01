@@ -13,6 +13,8 @@ Public Class Form1
 
         refrescar()
         Ocultar()
+        Me.fecharecibido_date.Value = Date.Today
+        Me.requeridopara_txt.Value = Date.Today
 
     End Sub
 
@@ -261,20 +263,18 @@ Public Class Form1
 
 
 
-    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
-        Dim i As Integer
-        Dim k As Integer
-        i = DataGridView1.CurrentRow.Index
-        k = DataGridView1.CurrentCell.ColumnIndex
-        foliocdt2_txt.Text = DataGridView1.Item(k, i).Value
+    'Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
+    'Dim i As Integer
+    'Dim k As Integer
+    '   i = DataGridView1.CurrentRow.Index
+    '  k = DataGridView1.CurrentCell.ColumnIndex
+    ' foliocdt2_txt.Text = DataGridView1.Item(k, i).Value
 
-    End Sub
+    'End Sub
 
 
 
-    Private Sub asunto2_txt_TextChanged(sender As Object, e As EventArgs)
 
-    End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
@@ -299,7 +299,51 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub CnsxAsunto_Click(sender As Object, e As EventArgs) Handles CnsxAsunto.Click
+
+
+    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
+        Dim i As Integer
+        Dim k As Integer
+
+        i = DataGridView1.CurrentRow.Index
+        k = DataGridView1.CurrentCell.ColumnIndex
+        foliocdt2_txt.Text = DataGridView1.Item(k, i).Value
+
+
+        Try
+            Dim directorioArchivo As String
+            directorioArchivo = System.AppDomain.CurrentDomain.BaseDirectory() & "temp.pdf"
+
+            Dim str_cadena As String
+            str_cadena = " select * from cdt_informacion where folioCDT=" & foliocdt2_txt.Text
+            If conectar() = False Then
+                Exit Sub
+            End If
+            dr = fun_ExecuteReader(str_cadena)
+            If dr.HasRows Then
+                While dr.Read
+
+                    observaciones2_txt.Text = dr("observaciones")
+
+                    If dr("arch_pdf") IsNot DBNull.Value Then
+                        Dim bytes() As Byte
+                        bytes = dr("arch_pdf")
+
+                        BytesAArchivo(bytes, directorioArchivo)
+                        ArcPDF2.src = directorioArchivo
+                        My.Computer.FileSystem.DeleteFile(directorioArchivo)
+
+                    End If
+                End While
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub MostrarForm2_Click(sender As Object, e As EventArgs) Handles MostrarForm2.Click
         Form2.Show()
     End Sub
+
+
 End Class

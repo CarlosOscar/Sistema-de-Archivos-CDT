@@ -69,7 +69,6 @@ Partial Class Form1
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.observaciones2_txt = New System.Windows.Forms.TextBox()
-        Me.CnsxAsunto = New System.Windows.Forms.Button()
         Me.ArcPDF2 = New AxAcroPDFLib.AxAcroPDF()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.button3 = New System.Windows.Forms.Button()
@@ -81,6 +80,7 @@ Partial Class Form1
         Me.CDTDataSetBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.CDTDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CDTDataSet = New Sistema_de_Archivos.CDTDataSet()
+        Me.MostrarForm2 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.ArcPDF, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -524,9 +524,9 @@ Partial Class Form1
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.MostrarForm2)
         Me.TabPage2.Controls.Add(Me.Button2)
         Me.TabPage2.Controls.Add(Me.observaciones2_txt)
-        Me.TabPage2.Controls.Add(Me.CnsxAsunto)
         Me.TabPage2.Controls.Add(Me.ArcPDF2)
         Me.TabPage2.Controls.Add(Me.DataGridView1)
         Me.TabPage2.Controls.Add(Me.button3)
@@ -558,15 +558,6 @@ Partial Class Form1
         Me.observaciones2_txt.Name = "observaciones2_txt"
         Me.observaciones2_txt.Size = New System.Drawing.Size(350, 125)
         Me.observaciones2_txt.TabIndex = 60
-        '
-        'CnsxAsunto
-        '
-        Me.CnsxAsunto.Location = New System.Drawing.Point(58, 684)
-        Me.CnsxAsunto.Name = "CnsxAsunto"
-        Me.CnsxAsunto.Size = New System.Drawing.Size(380, 92)
-        Me.CnsxAsunto.TabIndex = 59
-        Me.CnsxAsunto.Text = "Consultar por asunto"
-        Me.CnsxAsunto.UseVisualStyleBackColor = True
         '
         'ArcPDF2
         '
@@ -636,6 +627,15 @@ Partial Class Form1
         '
         Me.CDTDataSet.DataSetName = "CDTDataSet"
         Me.CDTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'MostrarForm2
+        '
+        Me.MostrarForm2.Location = New System.Drawing.Point(228, 696)
+        Me.MostrarForm2.Name = "MostrarForm2"
+        Me.MostrarForm2.Size = New System.Drawing.Size(169, 99)
+        Me.MostrarForm2.TabIndex = 62
+        Me.MostrarForm2.Text = "Consultar Por Asunto"
+        Me.MostrarForm2.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -715,7 +715,7 @@ Partial Class Form1
     Friend WithEvents CheckBox11 As CheckBox
     Private WithEvents txt_ruta As TextBox
     Friend WithEvents ArcPDF2 As AxAcroPDFLib.AxAcroPDF
-    Private WithEvents CnsxAsunto As Button
     Private WithEvents observaciones2_txt As TextBox
     Friend WithEvents Button2 As Button
+    Friend WithEvents MostrarForm2 As Button
 End Class
